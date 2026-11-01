@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="green">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Визитка Арианы</title>
+  <meta name="description" content="Студентка ДВФУ · Системное программирование / FEFU student · System Programming">
+  <meta name="theme-color" content="#090b0a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Сайт-визитка Арианы">
+  <meta property="og:description" content="Студентка ДВФУ · Системное программирование / FEFU student · System Programming">
+  <meta property="og:url" content="https://dergunovaai.github.io/One-page-website/">
+  <meta property="og:image" content="https://dergunovaai.github.io/One-page-website/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" id="favicon" href="favicon.svg" type="image/svg+xml" sizes="any">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&subset=cyrillic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="controls">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <span aria-hidden="true">|</span>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="themes" role="group" aria-label="Color theme">
+      <button type="button" data-set="green" aria-label="Green" aria-pressed="true"></button>
+      <button type="button" data-set="amber" aria-label="Amber" aria-pressed="false"></button>
+      <button type="button" data-set="violet" aria-label="Violet" aria-pressed="false"></button>
+      <button type="button" data-set="white" aria-label="White" aria-pressed="false"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <h1 id="greeting-wrap">
+        <span class="bracket" aria-hidden="true">⚞</span>
+        <span id="greeting"></span>
+        <span class="bracket" aria-hidden="true">⚟</span>
+      </h1>
+      <p class="subtitle" id="subtitle-wrap"><span id="subtitle"></span><span class="cursor" aria-hidden="true"></span></p>
+
+      <nav class="links" aria-label="Links">
+        <a href="https://github.com/dergunovaai" target="_blank" rel="noopener"><span class="prompt">$</span> <span class="cmd" data-text="open github">open github</span></a>
+        <a href="https://t.me/aryanochkaa" target="_blank" rel="noopener"><span class="prompt">$</span> <span class="cmd" data-text="open telegram">open telegram</span></a>
+        <a id="mail" href="mailto:dergunova.ai@dvfu.ru"><span class="prompt">$</span> <span class="cmd" data-text="send email">send email</span></a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="status" aria-hidden="true"><span id="clock">--:--</span> · uptime <span id="uptime">00:00</span></footer>
+  <button type="button" id="term-open" class="hint">
+    <span class="hint-long" id="hint-text"></span><span class="hint-short">&gt;_</span>
+  </button>
+
+  <section id="terminal" aria-label="Terminal" hidden>
+    <div id="term-out" aria-live="polite"></div>
+    <label class="term-line"><span class="term-prompt">visitor@ariana:~$</span>
+      <input id="term-in" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Terminal command">
+    </label>
+  </section>
+
+  <div id="photo" role="dialog" aria-modal="true" aria-label="meimei.jpg" hidden>
+    <figure>
+      <img id="photo-img" alt="Meimei, a snow leopard, raising its paw">
+      <figcaption>meimei.jpg</figcaption>
+    </figure>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
